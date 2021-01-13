@@ -1,0 +1,12 @@
+li{
+  display: inline;
+  margin-left: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  list-style-type: disc;
+}
+.results{
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+

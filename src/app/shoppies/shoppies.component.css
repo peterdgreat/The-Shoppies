@@ -1,0 +1,33 @@
+
+button{
+  display: none;
+}
+form{
+  margin-top: 2em;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-radius: .5em;
+  height: 8em;
+}
+.input{
+  padding-top: 2em;
+  margin: 0 auto;
+  width: 95%;
+}
+.title{
+  padding-bottom: .5em;
+  color: #424B54;
+}
+.nominating-result{
+  margin-top: 2em;
+  background-color: #FFFFFF;
+  border-radius: .5em;
+
+}
+.nominate{
+  padding: 2em;
+  padding-bottom: 2em;
+}
+ul{
+  list-style-type:disk  !important;
+}
