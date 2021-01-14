@@ -12,6 +12,8 @@ export class ShoppiesComponent implements OnInit {
  // searchGroup:FormGroup
  // private search:FormControl
 movieList:any=[]
+
+nominations:any=[]
 searchTerm:string
   constructor( private shoppies:ShoppiesService) { }
 
@@ -38,5 +40,17 @@ searchTerm:string
 
     })
   }
+nominate(movie){
 
+ this.nominations.push(movie)
+  console.log(this.nominations);
+
+}
+receiveMovie($event){
+
+this.nominations.push($event)
+
+console.log(this.nominations);
+  //this.nominations=$event
+}
 }

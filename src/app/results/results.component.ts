@@ -14,14 +14,10 @@ export class ResultsComponent implements OnInit {
 @Input() data:any
 @Output() addMovie:EventEmitter=new EventEmitter()
 subscribe:Observable<any>
-nominations:any=[]
+
   constructor( private shoppies:ShoppiesService) { }
 
   ngOnInit(): void {
   }
 
-nominate(movie){
-
-  this.shoppies.toggleNominated(movie)
-}
 }

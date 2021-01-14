@@ -12,9 +12,13 @@
 
 <div class="input">
 
-  <div class="title" >Movie Title</div>
+<mat-form-field class="title" appearance="outline" color ="accent">
 
-     <input  #input  name="searchTerm"   id="searchTerm" type="search" class="form-control" placeholder="search..." />
+<mat-label>
+  Movie Title
+</mat-label>
+     <input matInput  #input  name="searchTerm"   id="searchTerm" type="search"  placeholder="search..." />
+    </mat-form-field>
      <span >
       <button type="submit"class="btn btn-primary" (click)="searchMovies(input.value)">search</button>
      </span>
@@ -36,18 +40,21 @@
 
 <div class="nominate">
 
-
+<div >Search for a movie</div>
   <ul *ngFor='let movie of movieList.Search'>
+
 <app-results  [data]="movie"></app-results>
-  </ul>
+<app-nominatingbutton (click)="nominate(movie)"></app-nominatingbutton>
+</ul>
+
 </div>
 </div>
 </section>
 <section class="col-md-6">
   <div class="nominating-result">
 
+<app-nominatingresults [data]="nominations"   ></app-nominatingresults>
 
-  Nominations
 </div>
 </section>
 </div>

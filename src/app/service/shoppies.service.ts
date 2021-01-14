@@ -40,14 +40,14 @@ return this.http.get<Shoppies[]>(`${this.api}s=${searchTerm}&apikey=${this.key}`
 
 //   }
   }
-   toggleNominated(movie):Observable<any>{
+  /* toggleNominated(movie){
 const url=`${this.api}s=${movie}&apikey=${this.key}`
 const nominations:any=[]
 console.log(nominations);
-return nominations.push(movie)
+ nominations.push(movie)
 
 
 
-}
+}*/
 
 }

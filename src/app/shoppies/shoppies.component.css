@@ -8,7 +8,18 @@ form{
   width: 100%;
   border-radius: .5em;
   height: 8em;
+
 }
+
+mat-form-field {
+  display: block;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: 100% !important;
+  color: #424B54 !important;
+}
+
 .input{
   padding-top: 2em;
   margin: 0 auto;
