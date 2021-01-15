@@ -23,6 +23,7 @@ searchTerm:string
 
 })*/
 
+
   }
 /* searchMovies(searchTerm){
     this.shoppies.getMovies(searchTerm).subscribe(list=>{
@@ -41,16 +42,15 @@ searchTerm:string
     })
   }
 nominate(movie){
+if(this.nominations.includes(movie) || this.nominations.length===5) {
+return ''
+}else{
 
- this.nominations.push(movie)
   console.log(this.nominations);
+return this.nominations.push(movie)
 
 }
-receiveMovie($event){
 
-this.nominations.push($event)
-
-console.log(this.nominations);
-  //this.nominations=$event
 }
+
 }

@@ -9,11 +9,13 @@ import { ShoppiesService } from '../service/shoppies.service';
 export class NominatingbuttonComponent implements OnInit {
 @Output() addMovie:EventEmitter<any>=new EventEmitter
  @Input() data:any
+ isNextButton = false;
  nominations:any=[]
 constructor(private shoppies:ShoppiesService) { }
 
   ngOnInit(): void {
   }
+  setSecurity() { this.isNextButton = !this.isNextButton;}
 
 
 

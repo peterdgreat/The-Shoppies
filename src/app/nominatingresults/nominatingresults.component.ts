@@ -13,5 +13,16 @@ export class NominatingresultsComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  delete(titles){
+    //UI
+// this.nominated=this.nominated.filter(t=>t.id !==todo.id)
+  //service
+  //this.todoservice.deleteTodo(todo).subscribe()
+  for(let i=0; i<this.data.length; i++){
+    if(titles===this.data[i]){
+   return   this.data.splice(i,1)
+    }
 
+  }
+  }
 }

@@ -19,16 +19,40 @@ mat-form-field {
   width: 100% !important;
   color: #424B54 !important;
 }
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+
+  color: #424B54 !important;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+
+  font-weight: bold;
+  color: #424B54 !important;
+}
+::ng-deep .mat-input-element {
+  caret-color: #424B54!important;
+
+}
+
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+}
+
+
+.display{
+  display: flex;
+}
 
 .input{
-  padding-top: 2em;
+  padding-top: 2.5em;
   margin: 0 auto;
   width: 95%;
 }
-.title{
-  padding-bottom: .5em;
-  color: #424B54;
-}
+
 .nominating-result{
   margin-top: 2em;
   background-color: #FFFFFF;

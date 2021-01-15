@@ -1,4 +1,6 @@
 
 
-    <li  *ngFor ="let Result of data">{{Result.Title}}</li>
+    <li  *ngFor ="let Result of data">{{Result.Title}}
+      <app-delete  (click)="delete(Result)"></app-delete>
+    </li>
 

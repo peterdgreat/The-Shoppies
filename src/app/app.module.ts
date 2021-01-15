@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
 import {MatFormFieldModule} from'@angular/material/form-field'
 import {MatInputModule} from '@angular/material/input'
+import {MatIconModule} from '@angular/material/icon'
+import {MatButtonModule} from '@angular/material/button'
+import {MatButtonToggleModule} from '@angular/material/button-toggle'
+
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +17,7 @@ import { ValueArrayPipe } from './value-array.pipe';
 import { ResultsComponent } from './results/results.component';
 import { NominatingbuttonComponent } from './nominatingbutton/nominatingbutton.component';
 import { NominatingresultsComponent } from './nominatingresults/nominatingresults.component';
+import { DeleteComponent } from './delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,8 @@ import { NominatingresultsComponent } from './nominatingresults/nominatingresult
     ValueArrayPipe,
     ResultsComponent,
     NominatingbuttonComponent,
-    NominatingresultsComponent
+    NominatingresultsComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +36,10 @@ import { NominatingresultsComponent } from './nominatingresults/nominatingresult
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
-
+    MatInputModule,
+    MatIconModule,
+    MatButtonToggleModule,
+    MatButtonModule
 
 
   ],
