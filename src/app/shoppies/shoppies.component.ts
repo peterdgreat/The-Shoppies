@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalDismissReasons, NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalService } from '../service/modal.service';
 import { ShoppiesService } from '../service/shoppies.service';
 import { ToasterService } from '../service/toastr.service';
 
@@ -13,7 +15,8 @@ movieList:any=[]
 showSpinner=false;
 nominations:any=[]
 searchTerm:string
-  constructor( private shoppies:ShoppiesService, private toastr:ToasterService) { }
+closeResult:string
+  constructor( private shoppies:ShoppiesService, private toastr:ToasterService,private modalService:NgbModal) { }
 
   ngOnInit(): void {
 
@@ -36,16 +39,41 @@ searchTerm:string
   }
 nominate(movie){
 if(this.nominations.includes(movie) || this.nominations.length===5) {
-return ''
+
+  return ''
+
 }else{
 
   console.log(this.nominations);
-  this.toastr.success(`${movie.Title}(${movie.Year}) added to Nominations List`)
+  this.toastr.success(`${movie.Title}(${movie.Year}) added to Nominations`)
  this.nominations.push(movie)
 
 
 }
 
+}
+
+  open(content) {
+    if(this.nominations.length===5){
+
+
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  }
+
+
+private getDismissReason(reason: any): string {
+  if (reason === ModalDismissReasons.ESC) {
+    return 'by pressing ESC';
+  } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+    return 'by clicking on a backdrop';
+  } else {
+    return  `with: ${reason}`;
+  }
 }
 
 }

@@ -8,6 +8,8 @@ import {MatButtonModule} from '@angular/material/button'
 import {MatButtonToggleModule} from '@angular/material/button-toggle'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import {ToastrModule,ToastrService} from 'ngx-toastr'
+import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap'
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShoppiesService } from './service/shoppies.service';
@@ -18,6 +20,7 @@ import { ResultsComponent } from './results/results.component';
 import { NominatingbuttonComponent } from './nominatingbutton/nominatingbutton.component';
 import { NominatingresultsComponent } from './nominatingresults/nominatingresults.component';
 import { DeleteComponent } from './delete/delete.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -41,11 +44,14 @@ import { DeleteComponent } from './delete/delete.component';
     MatButtonToggleModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgbModule,
+    ModalModule.forRoot()
 
 
   ],
-  providers: [ShoppiesService,ToastrService],
+
+  providers: [ShoppiesService,ToastrService,NgbActiveModal],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

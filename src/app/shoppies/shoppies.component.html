@@ -23,7 +23,7 @@
 
     </mat-form-field>
      <span >
-      <button type="submit"class="btn btn-primary" (click)="searchMovies(input.value)">search</button>
+      <button type="submit"class="btn btn-primary none" (click)="searchMovies(input.value)">search</button>
      </span>
     </div>
     </div>
@@ -50,7 +50,7 @@
   <div class="display" *ngFor='let movie of movieList.Search'>
 
 <app-results class="m-2"  [data]="movie"></app-results>
-<app-nominatingbutton  class="m-2" (click)="nominate(movie)"></app-nominatingbutton>
+<app-nominatingbutton  class="m-2" (click)="nominate(movie);open(mymodal)"></app-nominatingbutton>
   </div>
 
 </div>
@@ -73,4 +73,34 @@
 </div>
 
 
+
 </div>
+<div class="modal">
+
+<div class="modal-body">
+
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Movie Nominations Exceeded</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+<h3>
+  Hello!
+</h3>
+ <p>You have exceeded your movie Nominations </p>
+ <p>Please Kindly remove from your Nominations to add more movie </p>
+ <p>Click Ok to continue</p>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+</div>
+
+</div>
+
