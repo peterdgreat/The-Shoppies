@@ -26,7 +26,7 @@ return this.http.get(this.api)
 */
 
 
- api:string='http://www.omdbapi.com/?'
+ api:string='https://www.omdbapi.com/?'
 key:string='fbdac5a1'
 constructor( private http:HttpClient) { }
 
