@@ -6,8 +6,8 @@ import {MatInputModule} from '@angular/material/input'
 import {MatIconModule} from '@angular/material/icon'
 import {MatButtonModule} from '@angular/material/button'
 import {MatButtonToggleModule} from '@angular/material/button-toggle'
-
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import {ToastrModule,ToastrService} from 'ngx-toastr'
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShoppiesService } from './service/shoppies.service';
@@ -39,11 +39,13 @@ import { DeleteComponent } from './delete/delete.component';
     MatInputModule,
     MatIconModule,
     MatButtonToggleModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    ToastrModule.forRoot()
 
 
   ],
-  providers: [ShoppiesService],
+  providers: [ShoppiesService,ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

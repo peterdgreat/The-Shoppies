@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ShoppiesService } from '../service/shoppies.service';
+import { ToasterService } from '../service/toastr.service';
 
 @Component({
   selector: 'app-nominatingresults',
@@ -8,18 +8,15 @@ import { ShoppiesService } from '../service/shoppies.service';
 })
 export class NominatingresultsComponent implements OnInit {
 @Input ()data:any
-  constructor(private shoppies:ShoppiesService) { }
+  constructor(private toastr:ToasterService) { }
 
   ngOnInit(): void {
 
   }
   delete(titles){
-    //UI
-// this.nominated=this.nominated.filter(t=>t.id !==todo.id)
-  //service
-  //this.todoservice.deleteTodo(todo).subscribe()
-  for(let i=0; i<this.data.length; i++){
+   for(let i=0; i<this.data.length; i++){
     if(titles===this.data[i]){
+      this.toastr.warning(`${titles.Title}(${titles.Year}) Deleted`)
    return   this.data.splice(i,1)
     }
 

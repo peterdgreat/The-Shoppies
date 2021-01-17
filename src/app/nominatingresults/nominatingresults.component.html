@@ -1,6 +1,6 @@
 
 
-    <li  *ngFor ="let Result of data">{{Result.Title}}
+    <li class="m-2" *ngFor ="let Result of data">{{Result.Title}}({{Result.Year}})
       <app-delete  (click)="delete(Result)"></app-delete>
     </li>
 

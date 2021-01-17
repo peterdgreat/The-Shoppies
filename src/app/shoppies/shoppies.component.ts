@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { ShoppiesService } from '../service/shoppies.service';
-import { Shoppies } from '../shoppies';
+import { ToasterService } from '../service/toastr.service';
 
 @Component({
   selector: 'app-shoppies',
@@ -9,33 +8,27 @@ import { Shoppies } from '../shoppies';
   styleUrls: ['./shoppies.component.css']
 })
 export class ShoppiesComponent implements OnInit {
- // searchGroup:FormGroup
- // private search:FormControl
-movieList:any=[]
 
+movieList:any=[]
+showSpinner=false;
 nominations:any=[]
 searchTerm:string
-  constructor( private shoppies:ShoppiesService) { }
+  constructor( private shoppies:ShoppiesService, private toastr:ToasterService) { }
 
   ngOnInit(): void {
-/*this.shoppies.getMovies().subscribe(data=>{
-  console.log(data);
 
-})*/
 
 
   }
-/* searchMovies(searchTerm){
-    this.shoppies.getMovies(searchTerm).subscribe(list=>{
-      this.movieList=list
-      console.log(this.movieList);
 
-
-    })
-  }*/
   searchMovies(search){
+    this.showSpinner=true
+    setTimeout(()=>{
+      this.showSpinner=false;
+    },1500)
     this.shoppies.getMovies(search).subscribe(list=>{
-      this.movieList=list
+     this.movieList=list
+
       console.log(this.movieList);
 
 
@@ -47,7 +40,9 @@ return ''
 }else{
 
   console.log(this.nominations);
-return this.nominations.push(movie)
+  this.toastr.success(`${movie.Title}(${movie.Year}) added to Nominations List`)
+ this.nominations.push(movie)
+
 
 }
 

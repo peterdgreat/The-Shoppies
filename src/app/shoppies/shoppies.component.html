@@ -44,10 +44,13 @@
 <div class="nominate">
 
 <h4 > Results for "{{input.value}}"</h4>
+<mat-spinner *ngIf="showSpinner">
+
+</mat-spinner>
   <div class="display" *ngFor='let movie of movieList.Search'>
 
 <app-results class="m-2"  [data]="movie"></app-results>
-<app-nominatingbutton class="m-2" (click)="nominate(movie)"></app-nominatingbutton>
+<app-nominatingbutton  class="m-2" (click)="nominate(movie)"></app-nominatingbutton>
   </div>
 
 </div>
@@ -55,9 +58,16 @@
 </section>
 <section class="col-md-6">
   <div class="nominating-result">
+    <div class="nominate">
 
-<app-nominatingresults [data]="nominations"   ></app-nominatingresults>
 
+<h4>Nominations</h4>
+<div >
+
+
+<app-nominatingresults  [data]="nominations"   ></app-nominatingresults>
+</div>
+</div>
 </div>
 </section>
 </div>
